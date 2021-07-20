@@ -1,6 +1,7 @@
 describe ApplicationController do
   let(:bakery1) { Bakery.first }
   let(:bakery2) { Bakery.second }
+  let(:baked_good) { BakedGood.first }
 
   before do
     bakery1 = Bakery.create(name: "Northside")
@@ -105,8 +106,8 @@ describe ApplicationController do
   end
 
   describe 'DELETE /baked_goods/:id' do
-    it 'deletes the baked_good from the database' do
-      expect { delete "/bakeries/#{bakery1.id}" }.to change(Bakery, :count).from(2).to(1)
+    it 'deletes the baked good from the database' do
+      expect { delete "/baked_goods/#{baked_good.id}" }.to change(BakedGood, :count).from(3).to(2)
     end
   end
 

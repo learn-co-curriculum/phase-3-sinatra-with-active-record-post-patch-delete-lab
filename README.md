@@ -41,11 +41,28 @@ of how to send data to and receive data from the server.
 
 Define routes that do the following:
 
-- `POST /baked_goods`: creates a new baked good in the database, and returns
-  data for the newly created baked good as JSON.
-- `PATCH /bakeries/:id`: updates the name of the bakery in the database, and
-  returns data for the updated bakery as JSON.
-- `DELETE /baked_goods/:id`: deletes the baked_good from the database.
+`POST /baked_goods`: creates a new baked good in the database, and returns
+data for the newly created baked good as JSON. The request will receive an object like this as params:
+
+```json
+{
+  "name": "Lemon Poppyseed Muffin",
+  "price": 3,
+  "bakery_id": 1
+}
+```
+
+`PATCH /bakeries/:id`: updates the name of the bakery in the database, and
+returns data for the updated bakery as JSON. The request will receive an object
+like this as params:
+
+```json
+{
+  "name": "Northwestside Bakery"
+}
+```
+
+`DELETE /baked_goods/:id`: deletes the baked_good from the database.
 
 ## Resources
 
