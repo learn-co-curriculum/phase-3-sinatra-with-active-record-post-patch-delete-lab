@@ -15,16 +15,16 @@ domain. As a reminder, here's what the ERD for these tables looks like:
 
 To set up the application, run these commands:
 
-```sh
-bundle install
-bundle exec rake db:migrate db:seed
+```console
+$ bundle install
+$ bundle exec rake db:migrate db:seed
 ```
 
 You can run the app and explore your API in the Postman by using the custom Rake
 task:
 
-```sh
-bundle exec rake server
+```console
+$ bundle exec rake server
 ```
 
 ## Instructions
