@@ -29,10 +29,7 @@ $ bundle exec rake server
 
 ## Instructions
 
-This is a test-driven lab, so run the tests to get started! You'll be
-responsible for building out the associations between the models, and then
-working on adding routes to the `ApplicationController` for the different
-endpoints described in the test spec.
+This is a test-driven lab, so run the tests to get started! This lab builds on the other lessons from this sections, so some of the tests are already passing; the associations between the models have been built out already, so a good place to start might be by working on adding routes to the `ApplicationController` for the different endpoints described in the test spec.
 
 You should also test your routes using Postman as you go in order to get a sense
 of how to send data to and receive data from the server.
