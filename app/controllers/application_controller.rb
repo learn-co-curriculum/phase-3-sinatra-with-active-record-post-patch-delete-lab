@@ -1,11 +1,11 @@
 class ApplicationController < Sinatra::Base
-  set default_content_type: "application/json"
-  
+  set default_content_type: 'application/json'
+
   get '/bakeries' do
     bakeries = Bakery.all
     bakeries.to_json
   end
-  
+
   get '/bakeries/:id' do
     bakery = Bakery.find(params[:id])
     bakery.to_json(include: :baked_goods)
@@ -23,4 +23,23 @@ class ApplicationController < Sinatra::Base
     baked_good.to_json
   end
 
+  post '/baked_goods' do
+    BakedGood.create(name: params[:name], price: params[:price], bakery_id: params[:bakery_id]).to_json
+  end
+
+  patch '/bakeries/:id' do
+    bakery = Bakery.find_by(id: params[:id])
+    return unless bakery && params[:name]
+
+    bakery.update(name: params[:name])
+    bakery.to_json
+  end
+
+  delete '/baked_goods/:id' do
+    baked_good = BakedGood.find_by(id: params[:id])
+    return unless baked_good
+
+    baked_good.destroy
+    baked_good.to_json
+  end
 end
